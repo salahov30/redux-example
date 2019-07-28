@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
 export class Page extends React.Component {
   onBtnClick = e => {
     const year = +e.currentTarget.innerText
@@ -7,6 +8,7 @@ export class Page extends React.Component {
   }
   renderTemplate = () => {
     const { photos, isFetching, error } = this.props
+
     if (error) {
       return <p className="error">Во время загрузки фото произошла ошибка</p>
     }
@@ -23,27 +25,21 @@ export class Page extends React.Component {
       ))
     }
   }
+
+  renderButtons() {
+    const years = [2019, 2018, 2016, 2015, 2014, 2013, 2012, 2011]
+
+    return years.map(item => (
+      <button key={item} onClick={this.onBtnClick} className="btn-year">
+        {item}
+      </button>
+    ))
+  }
   render() {
     const { year, photos } = this.props
     return (
-      <div className="ib page">
-        <p>
-          <button className="btn" onClick={this.onBtnClick}>
-            2018
-          </button>
-          <button className="btn" onClick={this.onBtnClick}>
-            2017
-          </button>
-          <button className="btn" onClick={this.onBtnClick}>
-            2016
-          </button>
-          <button className="btn" onClick={this.onBtnClick}>
-            2015
-          </button>
-          <button className="btn" onClick={this.onBtnClick}>
-            2014
-          </button>
-        </p>
+      <div className="page">
+        {this.renderButtons()}
         <h3>
           {year} год [{photos.length}]
         </h3>
@@ -52,6 +48,7 @@ export class Page extends React.Component {
     )
   }
 }
+
 Page.propTypes = {
   year: PropTypes.number.isRequired,
   photos: PropTypes.array.isRequired,
