@@ -14,13 +14,17 @@ export class User extends React.Component {
     }
 
     if (name) {
-      return <p>Привет, {name}</p>
+      return <p className="auth-user">Привет, {name}</p>
     } else {
-      return <button onClick={this.props.handleLogin}>Войти</button>
+      return (
+        <button className="btn-auth" onClick={this.props.handleLogin}>
+          Войти
+        </button>
+      )
     }
   }
   render() {
-    return this.renderTemplate()
+    return <div className="user-wrapper">{this.renderTemplate()}</div>
   }
 }
 

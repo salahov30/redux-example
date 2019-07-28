@@ -12,6 +12,8 @@ export function handleLogin() {
     VK.Auth.login(r => {
       if (r.session) {
         let username = r.session.user.first_name
+        let avatar = r.session
+        console.log(avatar)
 
         dispatch({
           type: LOGIN_SUCCESS,

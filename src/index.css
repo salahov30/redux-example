@@ -1,13 +1,95 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.app {
+  display: grid;
+  align-items: center;
+  max-width: 980px;
+  margin: 0 auto;
+  grid-template-columns: auto 100px;
+  grid-template-areas: 'title user-wrapper'
+                       'page-wrapper ...';
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.page-title {
+  grid-area: title;
+  font-size: 65px;
+  text-align: center;
+}
+
+.page-wrapper {
+  grid-area: page-wrapper
+}
+
+.btn-year {
+  width: 100px;
+  height: 45px;
+  margin: 0 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-year:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+button:focus {
+  box-shadow: 0px 0px 2px 2px #00b894
+}
+
+.btn-auth {
+  width: 100px;
+  height: 45px;
+  margin: 0 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #00b894;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  background-color: #55efc4;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-auth:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.user-wrapper {
+  grid-area: user-wrapper;
+  text-align: center;
+}
+
+img {
+  border-radius: 5px;
+  margin-top: 50px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+span {
+  color: #fff;
+  position: relative;
+  left: -50px;
+  bottom: 15px;
 }
