@@ -93,11 +93,3 @@ span {
   left: -50px;
   bottom: 15px;
 }
-
-.photo {
-  display: flex;
-}
-
-.photo-item {
-  display: flex;
-}
