@@ -97,3 +97,7 @@ span {
 .photo {
   display: flex;
 }
+
+.photo-item {
+  display: flex;
+}
