@@ -6,6 +6,7 @@ export class Page extends React.Component {
     const year = +e.currentTarget.innerText
     this.props.getPhotos(year)
   }
+
   renderTemplate = () => {
     const { photos, isFetching, error } = this.props
 
@@ -15,14 +16,16 @@ export class Page extends React.Component {
     if (isFetching) {
       return <p>Загрузка...</p>
     } else {
-      return photos.map((entry, index) => (
-        <div key={index} className="photo">
-          <div className="photo-item">
-            <img src={entry.sizes[2].url} alt={`Фото из профиля`} />
-            <span>{entry.likes.count} ❤</span>
-          </div>
+      return (
+        <div className="photo">
+          {photos.map((entry, index) => (
+            <div className="photo-item" key={index}>
+              <img src={entry.sizes[2].url} alt={`Фото из профиля`} />
+              <span>{entry.likes.count} ❤</span>
+            </div>
+          ))}
         </div>
-      ))
+      )
     }
   }
 
